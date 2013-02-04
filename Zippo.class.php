@@ -9,7 +9,7 @@
  * @php >= 5.2.0
  */
 class Zippo {
-	 /**
+	/**
      * Compression Options
      *
      * @var array $options
@@ -109,10 +109,7 @@ class Zippo {
 			case 'ZIP_NAME':
 				$value = trim(str_replace(array('/', '\\'), '', (string) $value));
 
-				if(empty($value)) {
-					$value = date('H-i-s--d-m-Y');
-				}
-				if(!$this->is_zip($value)) {
+				if(!empty($value) && !$this->is_zip($value)) {
 					$value .= '.zip';
 				}
 			break;
